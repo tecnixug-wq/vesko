@@ -1,0 +1,156 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #2d572c;
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;  /* more breathing room */
+}
+.section.bg-light {
+  background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2d572c !important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+}
+.navbar-brand {
+  font-weight: 600;
+}
+.navbar a {
+  color: white !important;
+  transition: 0.3s;
+  margin-left: 15px;
+}
+.navbar a:hover {
+  color: #ffd700 !important; /* gold highlight */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 120px 20px; /* bigger hero area */
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.btn-success {
+  background: #2d572c;
+  border: none;
+}
+.btn-success:hover {
+  background: #228B22;
+  transform: scale(1.05);
+}
+.btn-light {
+  color: #2d572c;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  margin-bottom: 30px;  /* spacing between cards */
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.card-title {
+  color: #2d572c;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Forms */
+form {
+  margin-top: 20px;
+}
+form .form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 14px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+form .form-control:focus {
+  border-color: #2d572c;
+  box-shadow: 0 0 6px rgba(45,87,44,0.4);
+}
+form button {
+  margin-top: 10px;
+}
+
+/* Accordion */
+.accordion {
+  margin-top: 30px;
+}
+.accordion-button {
+  font-weight: 500;
+  padding: 15px;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #2d572c;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #2d572c;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background: #2d572c;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  margin: 0 12px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
