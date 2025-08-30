@@ -17,10 +17,14 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      border: 2px solid #8B5C2A;
     }
+
+
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+      box-shadow: 0 8px 24px rgba(139,92,42,0.13);
+      border-color: #6e471f;
     }
     .service-card img {
       border-top-left-radius: 12px;
@@ -35,6 +39,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+    .service-card-body h5 {
+      color: #8B5C2A;
     }
     .service-features {
       text-align: left;
@@ -51,10 +58,17 @@
       padding: 40px 0;
       text-align: center;
     }
-    .cta-section .btn {
+    .cta-section .btn-brown {
+      background: #8B5C2A;
+      color: #fff;
+      border: none;
       padding: 12px 32px;
       font-size: 1.1rem;
       border-radius: 30px;
+    }
+    .cta-section .btn-brown:hover {
+      background: #6e471f;
+      color: #fff;
     }
     .footer {
       background: #2d572c;
@@ -62,24 +76,26 @@
       text-align: center;
       padding: 30px 10px 10px 10px;
       margin-top: 40px;
+      border-top: 4px solid #8B5C2A;
     }
     .footer a {
-      color: #fff;
+      color: #8B5C2A;
       margin: 0 8px;
       text-decoration: underline;
     }
     .footer a:hover {
-      color: #b6e2b6;
+      color: #6e471f;
     }
     .navbar {
       background: #2d572c;
+      border-bottom: 3px solid #8B5C2A;
     }
     .navbar .nav-link, .navbar .navbar-brand {
       color: #fff !important;
     }
     .navbar .nav-link.active, .navbar .nav-link:focus {
       font-weight: bold;
-      color: #2d572c !important;
+      color: #8B5C2A !important;
       background: #fff;
       border-radius: 20px;
       padding: 6px 18px;
@@ -88,6 +104,24 @@
       .service-card img {
         height: 120px;
       }
+    }
+    h2 {
+      color: #8B5C2A;
+    }
+    .btn {
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-brown {
+      background: #8B5C2A;
+      color: #fff;
+      border: none;
+    }
+    .btn-brown:hover {
+      background: #6e471f;
+      color: #fff;
     }
   </style>
 </head>
@@ -130,7 +164,7 @@
             <li>Lawn care & tree planting</li>
             <li>Outdoor beautification</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
@@ -146,7 +180,7 @@
             <li>Eco-friendly chemicals</li>
             <li>Odorless & safe for families</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
@@ -162,30 +196,30 @@
             <li>Office & home cleaning</li>
             <li>Post-construction cleaning</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
     <!-- Roof and Floor Cleaning -->
     <div class="col-md-4">
       <div class="service-card h-100">
-        <img src="./new house cleaning 2.jpg" alt="Landscaping service - green garden">
+        <img src="./new house cleaning 2.jpg" alt="Roof and Floor Cleaning">
         <div class="service-card-body">
           <h5 class="card-title">Roof and Floor Cleaning</h5>
-          <p>Transform your outdoor spaces with our creative and sustainable landscaping solutions.</p>
+          <p>We clean and restore roofs and floors for a fresh, safe environment.</p>
           <ul class="service-features">
-            <li>Garden design & maintenance</li>
-            <li>Lawn care & tree planting</li>
-            <li>Outdoor beautification</li>
+            <li>Roof cleaning & restoration</li>
+            <li>Floor scrubbing & polishing</li>
+            <li>Mold and stain removal</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
     <!-- Property Renovations -->
     <div class="col-md-4">
       <div class="service-card h-100">
-        <img src="./paving 2.jpg" alt="Fumigation service - pest control">
+        <img src="./paving 2.jpg" alt="Property Renovations">
         <div class="service-card-body">
           <h5 class="card-title">Property Renovations</h5>
           <p>Revitalize your space with our comprehensive property renovation services.</p>
@@ -194,14 +228,14 @@
             <li>Eco-friendly materials</li>
             <li>Custom designs & solutions</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
     <!-- Consultancy and Assessment -->
     <div class="col-md-4">
       <div class="service-card h-100">
-        <img src="./kara-eads-L7EwHkq1B2s-unsplash.jpg" alt="Cleaning service - spotless office">
+        <img src="./kara-eads-L7EwHkq1B2s-unsplash.jpg" alt="Consultancy and Assessment">
         <div class="service-card-body">
           <h5 class="card-title">Consultancy and Assessment</h5>
           <p>Get expert advice and assessments for your cleaning, fumigation, and landscaping needs.</p>
@@ -210,7 +244,7 @@
             <li>Customized service plans</li>
             <li>Ongoing support & consultation</li>
           </ul>
-          <a href="contact.html" class="btn btn-outline-success mt-3">Request Service</a>
+          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
         </div>
       </div>
     </div>
@@ -256,20 +290,25 @@
 
 <!-- Call to Action -->
 <section class="cta-section">
-  <h3>Need a Custom Solution?</h3>
+  <h3 style="color:#8B5C2A;">Need a Custom Solution?</h3>
   <p>Contact us for a free consultation or to request a quote for your unique needs.</p>
-  <a href="contact.html" class="btn btn-success">Contact Us</a>
+  <a href="contact.html" class="btn btn-brown">Contact Us</a>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
-  <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. | Designed by Tecnix Uganda</p>
+  <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. 
+    <br>Designed by Tecnix Uganda</p>
   <div>
-    <a href="#" aria-label="Facebook" style="color: yellow; text-decoration: none;">Facebook</a> | 
-    <a href="#" aria-label="WhatsApp" style="color: yellow; text-decoration: none;">WhatsApp</a> | 
-    <a href="#" aria-label="Instagram" style="color: yellow; text-decoration: none;">Instagram</a>
+    <a href="#" aria-label="Facebook">Facebook</a> | 
+    <a href="#" aria-label="WhatsApp">WhatsApp</a> | 
+    <a href="#" aria-label="Instagram">Instagram</a>
   </div>
+  
 </footer>
 <script>
   // Dynamic year insertion
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+</body>
+</html>
