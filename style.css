@@ -65,24 +65,7 @@ p {
   margin-bottom: 25px;
 }
 
-/* Buttons */
-.btn {
-  border-radius: 30px;
-  padding: 12px 28px;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out;
-}
-.btn-success {
-  background: #2d572c;
-  border: none;
-}
-.btn-success:hover {
-  background: #228B22;
-  transform: scale(1.05);
-}
-.btn-light {
-  color: #2d572c;
-}
+
 
 /* Cards */
 .card {
