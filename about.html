@@ -10,76 +10,87 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    /* Team Section Styling */
-      .team img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #2d572c;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  .team h6 {
-    margin-top: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  .team p {
-    margin: 0;
-    color: #555;
-    font-size: 0.85rem;
-  }
-  .team .row {
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 0;
-  }
-  @media (min-width: 768px) {
+    .team img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #8B5C2A;
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
     .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #8B5C2A;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(139,92,42,0.13);
+      border-color: #6e471f;
+    }
+    .team h6 {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #8B5C2A;
+    }
+    .team p {
+      margin: 0;
+      color: #555;
+      font-size: 0.85rem;
+    }
+    .team .row {
+      justify-content: center;
+      gap: 0;
       margin-bottom: 0;
     }
-  }
+    @media (min-width: 768px) {
+      .team-member {
+        margin-bottom: 0;
+      }
+    }
     .footer {
       background: #2d572c;
       color: #fff;
       text-align: center;
       padding: 30px 10px 10px 10px;
       margin-top: 40px;
+      border-top: 4px solid #8B5C2A;
     }
     .footer a {
-      color: #fff;
+      color: #8B5C2A;
       margin: 0 8px;
       text-decoration: underline;
     }
     .footer a:hover {
-      color: #b6e2b6;
+      color: #6e471f;
     }
     .navbar {
       background: #2d572c;
+      border-bottom: 3px solid #8B5C2A;
     }
     .navbar .nav-link, .navbar .navbar-brand {
       color: #fff !important;
     }
     .navbar .nav-link.active, .navbar .nav-link:focus {
       font-weight: bold;
-      color: #2d572c !important;
+      color: #8B5C2A !important;
       background: #fff;
       border-radius: 20px;
       padding: 6px 18px;
+    }
+    h2, h3, h5 {
+      color: #8B5C2A;
+    }
+    .card-title {
+      color: #8B5C2A;
     }
   </style>
 </head>
@@ -117,13 +128,12 @@
         Founded in 2023, Vesko Consultants Ltd has grown from a small team to a leading provider of cleaning, fumigation, and landscaping services in Uganda. Our journey is defined by a commitment to integrity, diligence, and customer satisfaction.
       </p>
       <ul class="list-unstyled">
-        <li>🏆 50+ satisfied clients</li>
+        <li>🏆 100+ satisfied clients</li>
         <li>🌍 Serving homes, offices, and institutions</li>
         <li>🤝 Trusted by top organizations</li>
       </ul>
       <blockquote class="blockquote mt-3">
-        <p class="mb-0">"We believe every space deserves to be clean, safe, and inspiring."</p>
-        <br>
+        <p class="mb-0">"We believe every space deserves to be clean, safe, and inspiring."</p><br>
         <footer class="blockquote-footer">Owomugisha Ishamail, Managing Director</footer>
       </blockquote>
     </div>
@@ -136,18 +146,18 @@
     <div class="col-md-6 mb-3">
       <div class="card h-100 shadow-sm border-0">
         <div class="card-body">
-          <div style="font-size:2.5rem;">👁️</div>
+          <div style="font-size:2.5rem; color:#8B5C2A;">👁️</div>
           <h3 class="mt-2">Our Vision</h3>
-          <p>To be the leading provider of quality space care solutions, setting top standards in cleaning, fumigation, landscaping, and more while continuously enhancing the well-being of our Clients</p>
+          <p>To be the leading provider of quality space care solutions, setting top standards in cleaning, fumigation, landscaping, and more.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
       <div class="card h-100 shadow-sm border-0">
         <div class="card-body">
-          <div style="font-size:2.5rem;">🎯</div>
+          <div style="font-size:2.5rem; color:#8B5C2A;">🎯</div>
           <h3 class="mt-2">Our Mission</h3>
-          <p>To provide reliable and top-quality services while promoting sustainability and customer satisfaction as we serve communities.</p>
+          <p>To deliver reliable and top-quality services while promoting sustainability and customer satisfaction as we serve communities.</p>
         </div>
       </div>
     </div>
@@ -160,42 +170,42 @@
   <div class="row mt-4 g-3">
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">🤝</div>
+        <div style="font-size:2rem; color:#8B5C2A;">🤝</div>
         <h5>Integrity</h5>
         <p class="small">We act with honesty and uphold the highest ethical standards in all our work.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">💪</div>
+        <div style="font-size:2rem; color:#8B5C2A;">💪</div>
         <h5>Diligence</h5>
         <p class="small">We work hard and pay attention to every detail, ensuring quality results.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">🌟</div>
+        <div style="font-size:2rem; color:#8B5C2A;">🌟</div>
         <h5>Excellence</h5>
         <p class="small">We strive for excellence in every project, big or small.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">🔒</div>
+        <div style="font-size:2rem; color:#8B5C2A;">🔒</div>
         <h5>Faithfulness</h5>
         <p class="small">We are committed and loyal to our clients and our mission.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">🤗</div>
+        <div style="font-size:2rem; color:#8B5C2A;">🤗</div>
         <h5>Teamwork</h5>
         <p class="small">We believe in collaboration and supporting each other for the best results.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0 p-3">
-        <div style="font-size:2rem;">🔑</div>
+        <div style="font-size:2rem; color:#8B5C2A;">🔑</div>
         <h5>Trustworthiness</h5>
         <p class="small">Our clients trust us to deliver on our promises, every time.</p>
       </div>
@@ -244,14 +254,17 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. | Designed by Tecnix Uganda</p>
+  <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. 
+    <br>Designed by Tecnix Uganda</p>
   <div>
-    <a href="#" aria-label="Facebook" style="color: yellow; text-decoration: none;">Facebook</a> | 
-    <a href="#" aria-label="WhatsApp" style="color: yellow; text-decoration: none;">WhatsApp</a> | 
-    <a href="#" aria-label="Instagram" style="color: yellow; text-decoration: none;">Instagram</a>
+    <a href="#" aria-label="Facebook">Facebook</a> | 
+    <a href="#" aria-label="WhatsApp">WhatsApp</a> | 
+    <a href="#" aria-label="Instagram">Instagram</a>
   </div>
 </footer>
 <script>
   // Dynamic year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+</body>
+</html>
