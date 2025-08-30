@@ -10,6 +10,468 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+        .service-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #8B5C2A;
+    }
+
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(139,92,42,0.13);
+      border-color: #6e471f;
+    }
+    .service-card img {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .service-card-body {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card-body h5 {
+      color: #8B5C2A;
+    }
+    .service-features {
+      text-align: left;
+      margin: 10px 0 0 0;
+      padding-left: 0;
+      font-size: 0.97rem;
+    }
+    .service-features li {
+      margin-bottom: 4px;
+      list-style: disc inside;
+    }
+    .carousel-caption {
+      background: rgba(34, 34, 34, 0.65);
+      padding: 24px 32px;
+      border-radius: 16px;
+      color: #fff !important;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 80%;
+    }
+    .carousel-caption h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #8B5C2A;
+    }
+    .carousel-caption p {
+      font-size: 1.1rem;
+    }
+    .carousel-item img {
+      height: 300px;
+      object-fit: cover;
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      .carousel-item img {
+        height: 160px;
+      }
+      .carousel-caption {
+        padding: 10px 8px;
+        font-size: 0.95rem;
+        max-width: 98%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .carousel-caption h1 {
+        font-size: 1.1rem;
+      }
+      .carousel-caption p {
+        font-size: 0.95rem;
+      }
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #8B5C2A;
+    }
+    .section .btn-brown {
+      background: #8B5C2A;
+      color: #fff;
+      border: none;
+    }
+    .section .btn-brown:hover {
+      background: #6e471f;
+      color: #fff;
+    }
+    .why-choose .card-title,
+    .why-choose h5 {
+      color: #8B5C2A;
+    }
+    .why-choose .card {
+      border: 2px solid #8B5C2A;
+    }
+    .footer {
+      background: #2d572c;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px 10px 10px;
+      margin-top: 40px;
+      border-top: 4px solid #8B5C2A;
+    }
+    .footer a {
+      color: #8B5C2A;
+      margin: 0 8px;
+      text-decoration: underline;
+    }
+    .footer a:hover {
+      color: #6e471f;
+    }
+    .navbar {
+      background: #2d572c;
+      border-bottom: 3px solid #8B5C2A;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar .nav-link.active, .navbar .nav-link:focus {
+      font-weight: bold;
+      color: #8B5C2A !important;
+      background: #fff;
+      border-radius: 20px;
+      padding: 6px 18px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 999;
+      background: #8B5C2A;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .back-to-top:hover {
+      background: #6e471f;
+    }
+    .btn {
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-brown {
+      background: #8B5C2A;
+      color: #fff;
+      border: none;
+    }
+    .btn-brown:hover {
+      background: #6e471f;
+      color: #fff;
+    }
+
+  .service-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid #8B5C2A;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(139,92,42,0.13);
+    border-color: #6e471f;
+  }
+  .service-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .service-card-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .service-card-body h5 {
+    color: #8B5C2A;
+  }
+  .service-card-body .btn-brown {
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+  @media (max-width: 767px) {
+    .service-card-img {
+      height: 120px;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html" style="font-size:1.7rem; letter-spacing:1px;">
+      Vesko Consultants
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon bg-light"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Hero Carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./kara-eads-L7EwHkq1B2s-unsplash.jpg" class="d-block w-100" alt="Beautifully landscaped garden with green grass and flowers">
+      <div class="carousel-caption">
+        <h1>Endless Customer Service</h1>
+        <p>Transforming spaces with expert cleaning and landscaping.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./gil-ribeiro-3hO8igCybds-unsplash.jpg" class="d-block w-100" alt="Fumigation professional at work">
+      <div class="carousel-caption">
+        <h1>Pest-Free Environments</h1>
+        <p>Safe and effective fumigation solutions.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./sofa cleaning.jpg" class="d-block w-100" alt="Professional cleaning in progress">
+      <div class="carousel-caption">
+        <h1>Professional Cleaning</h1>
+        <p>Homes and offices kept spotless.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next Slide">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+<!-- About Preview -->
+<section class="section container" id="about-preview">
+  <div class="row align-items-center">
+    <div class="col-md-5 text-center mb-4 mb-md-0">
+      <img src="./vesko_logo.png" alt="Vesko team at work" class="img-fluid rounded shadow" style="max-height:260px;">
+    </div>
+    <div class="col-md-7">
+      <h2>About Us</h2>
+      <p>
+        Vesko Consultants Ltd is your one-stop center for cleaning, fumigation, and landscaping services. We value integrity, diligence, and excellence in all we do.
+      </p>
+      <ul class="list-unstyled mb-3">
+        <li>✔ 10+ years of experience</li>
+        <li>✔ Trusted by top organizations</li>
+        <li>✔ Eco-friendly and safe solutions</li>
+      </ul>
+      <a href="about.html" class="btn btn-brown">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section text-center bg-light why-choose" id="why-choose">
+  <div class="container">
+    <h2>Why Choose Us</h2>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div style="font-size:2.2rem; color:#8B5C2A;">👷‍♂️</div>
+            <h5 class="mt-2">Professional Team</h5>
+            <p class="small">Our staff are trained, vetted, and passionate about service excellence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div style="font-size:2.2rem; color:#8B5C2A;">⏱</div>
+            <h5 class="mt-2">Timely Delivery</h5>
+            <p class="small">We value your time and always deliver on schedule.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div style="font-size:2.2rem; color:#8B5C2A;">🌿</div>
+            <h5 class="mt-2">Eco-Friendly</h5>
+            <p class="small">We use safe, environmentally friendly products and methods.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div style="font-size:2.2rem; color:#8B5C2A;">💯</div>
+            <h5 class="mt-2">Customer Satisfaction</h5>
+            <p class="small">Our clients’ happiness is our top priority, every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Cards -->
+<section class="section bg-light" id="services">
+  <div class="container text-center">
+    <h2>Our Services</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 d-flex">
+        <div class="service-card w-100">
+          <img src="./pankaj-shah-1ff_i7jO-4g-unsplash.jpg" class="service-card-img" alt="Landscaping service - green garden">
+          <div class="service-card-body d-flex flex-column">
+            <div>
+              <h5 class="card-title">Landscaping</h5>
+              <p class="card-text">Transforming outdoor spaces into beautiful environments.</p>
+            </div >
+            <div>
+              <a href="contact.html" class="btn btn-brown mt-auto">Request Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="service-card w-100">
+          <img src="./pille-r-priske-Y1JjwhHaPRM-unsplash.jpg" class="service-card-img" alt="Fumigation service - pest control">
+          <div class="service-card-body d-flex flex-column">
+            <div>
+              <h5 class="card-title">Fumigation</h5>
+              <p class="card-text">Safe and effective pest control solutions.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="btn btn-brown mt-auto">Request Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="service-card w-100">
+          <img src="./jeshoots-com-__ZMnefoI3k-unsplash.jpg" class="service-card-img" alt="Cleaning service - spotless office">
+          <div class="service-card-body d-flex flex-column">
+            <div>
+              <h5 class="card-title">Cleaning</h5>
+              <p class="card-text">Professional cleaning for homes and offices.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="btn btn-brown mt-auto">Request Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    
+    <a href="services.html" class="btn btn-brown mt-3">See All Services</a>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section container text-center" id="cta">
+  <h2>Ready to Transform Your Space?</h2>
+  <p>Contact us today for a free quote or to book a service. Experience the Vesko difference!</p>
+  <a href="contact.html" class="btn btn-brown">Request a Quote</a>
+</section>
+
+<!-- Testimonials -->
+<section class="section container text-center" id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel" aria-label="Testimonials Carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <blockquote>"Vesko transformed our office – spotless and fresh! Highly recommend." <br><small>- Client A</small></blockquote>
+      </div>
+      <div class="carousel-item">
+        <blockquote>"Excellent fumigation services, our home is now pest-free." <br><small>- Client B</small></blockquote>
+      </div>
+      <div class="carousel-item">
+        <blockquote>"Landscaping work was top notch. Our compound looks amazing!" <br><small>- Client C</small></blockquote>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous Testimonial">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next Testimonial">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</section>
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTopBtn" aria-label="Back to top">&uarr;</button>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. 
+    <br>Designed by Tecnix Uganda</p>
+  <div>
+    <a href="#" aria-label="Facebook">Facebook</a> | 
+    <a href="#" aria-label="WhatsApp">WhatsApp</a> | 
+    <a href="#" aria-label="Instagram">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  // Dynamic year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  window.onscroll = function() {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+  backToTopBtn.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesko Consultants - Home</title>
+  <meta name="description" content="Vesko Consultants Ltd offers professional cleaning, fumigation, and landscaping services with a focus on integrity, diligence, and excellence.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
     .carousel-item img {
       height: 280px;
       object-fit: cover;
@@ -379,4 +841,5 @@
   };
 </script>
 </body>
+
 </html>
