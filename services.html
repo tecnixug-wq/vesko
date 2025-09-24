@@ -10,6 +10,83 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    /* Subtle gradient background for main sections (same as index.html) */
+    .main-bg {
+      background: linear-gradient(120deg, #f8f9fa 70%, #e9ecef 100%);
+      border-radius: 16px;
+      margin-bottom: 40px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    @media (max-width: 767px) {
+      .main-bg {
+        border-radius: 8px;
+        margin-bottom: 24px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+    }
+    /* Sticky contact button */
+    .sticky-contact-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 9999;
+      background: #8B5C2A;
+      color: #fff200;
+      border-radius: 50px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.38);
+      box-shadow: 0 4px 16px rgba(139,92,42,0.18);
+      border: none;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    }
+    .sticky-contact-btn:hover {
+      background: #6e471f;
+      box-shadow: 0 8px 32px rgba(139,92,42,0.25);
+      color: #fff200;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.48);
+    }
+    @media (max-width: 767px) {
+      .sticky-contact-btn {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 18px;
+        font-size: 1rem;
+      }
+      .services-bg {
+        border-radius: 8px;
+        margin-bottom: 24px;
+      }
+      .card-img-top {
+        height: 120px !important;
+      }
+      .service-card-body {
+        padding: 12px;
+      }
+      .row-cols-md-3 > .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    /* Card fade-in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .service-card-animate {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
     .service-card {
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
@@ -118,10 +195,15 @@
       background: #8B5C2A;
       color: #fff;
       border: none;
+      box-shadow: 0 2px 8px rgba(139,92,42,0.15);
+      transform: scale(1);
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
     }
-    .btn-brown:hover {
+    .btn-brown:hover, .btn-brown:focus {
       background: #6e471f;
       color: #fff;
+      box-shadow: 0 6px 18px rgba(139,92,42,0.25);
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -147,104 +229,138 @@
   </div>
 </nav>
 
-<!-- Services Section -->
-<section class="section container text-center">
-  <h2>Our Services</h2>
-  <p>We offer a wide range of professional services to keep your spaces clean, safe, and beautiful.</p>
-  <div class="row mt-4 g-4">
-    <!-- Landscaping -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./paving 2.jpg" alt="Landscaping service - green garden">
-        <div class="service-card-body">
-          <h5 class="card-title">Landscaping & Paving</h5>
-          <p>Transform your outdoor spaces with our creative and sustainable landscaping solutions.</p>
-          <ul class="service-features">
-            <li>Garden design & maintenance</li>
-            <li>Lawn care & tree planting</li>
-            <li>Compound paving</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
+<!-- Our Services (Divided Section) -->
+<section class="section container main-bg">
+  <h2 class="text-center mb-3" style="color:#8B5C2A;">Our Services</h2>
+  <p class="text-center mb-4" style="max-width:700px;margin:0 auto;font-size:1.1rem;color:#444;">At Vesko Consultants, we deliver professional cleaning and construction solutions tailored to your needs. Our experienced team is committed to quality, reliability, and customer satisfaction in every project—whether it's a sparkling clean home, a pest-free environment, or a beautifully renovated property.</p>
+  <hr style="border-top:2px solid #8B5C2A; width:80px; margin:0 auto 32px auto;">
+  <div class="row mb-4">
+    <div class="col-md-12">
+  <h4 class="mb-4" style="color:#2d572c; text-align:left;">Cleaning Services</h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="House Cleaning" style="cursor:pointer;">
+            <img src="new house cleaning.jpg" class="card-img-top" alt="House Cleaning" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-house-door-fill"></i></span>
+                <h5 class="card-title mb-0">House Cleaning</h5>
+              </div>
+              <p class="card-text">Professional cleaning for homes, ensuring a spotless and healthy environment.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Sofa Cleaning" style="cursor:pointer;">
+            <img src="sofa cleaning.jpg" class="card-img-top" alt="Sofa Cleaning" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-couch"></i></span>
+                <h5 class="card-title mb-0">Sofa Cleaning</h5>
+              </div>
+              <p class="card-text">Deep cleaning for sofas and upholstery to remove stains and allergens.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Stone Cleaning" style="cursor:pointer;">
+            <img src="stone cleaning.jpg" class="card-img-top" alt="Stone Cleaning" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-bricks"></i></span>
+                <h5 class="card-title mb-0">Stone Cleaning</h5>
+              </div>
+              <p class="card-text">Restoring the beauty of stone surfaces with specialized cleaning techniques.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Roofing Tile Cleaning" style="cursor:pointer;">
+            <img src="./roofcleaning-1030x687.jpg" class="card-img-top" alt="Roofing Tile Cleaning" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-building"></i></span>
+                <h5 class="card-title mb-0">Roofing Tile Cleaning</h5>
+              </div>
+              <p class="card-text">Cleaning and maintenance for roofing tiles to extend their lifespan.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Petrol Station Cleaning" style="cursor:pointer;">
+            <img src="petrol station.jpg" class="card-img-top" alt="Petrol Station Cleaning" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-fuel-pump"></i></span>
+                <h5 class="card-title mb-0">Commercial Property Cleaning</h5>
+              </div>
+              <p class="card-text">Specialized cleaning for commercial business premises, ensuring safety and cleanliness.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Fumigation" style="cursor:pointer;">
+            <img src="fumigation3.jpg" class="card-img-top" alt="Fumigation" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-bug-fill"></i></span>
+                <h5 class="card-title mb-0">Fumigation</h5>
+              </div>
+              <p class="card-text">Effective pest control and fumigation services for all property types.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Fumigation -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./fumigation4.jpg" alt="Fumigation service - pest control">
-        <div class="service-card-body">
-          <h5 class="card-title">Fumigation</h5>
-          <p>Protect your home or business from pests with our safe and effective fumigation services.</p>
-          <ul class="service-features">
-            <li>Residential & commercial pest & Vector control</li>
-            <li>Eco-friendly chemicals</li>
-            <li>Odorless & safe for families</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-12">
+  <h4 class="mb-4" style="color:#2d572c; text-align:left;">Construction Services</h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Paving" style="cursor:pointer;">
+            <img src="paving.jpg" class="card-img-top" alt="Paving" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-grid-3x3-gap-fill"></i></span>
+                <h5 class="card-title mb-0">Paving</h5>
+              </div>
+              <p class="card-text">High-quality paving solutions for driveways, walkways, and outdoor spaces.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- General House Cleaning -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./sofa cleaning.jpg" alt="Cleaning service - spotless office">
-        <div class="service-card-body">
-          <h5 class="card-title">General Cleaning</h5>
-          <p>Enjoy spotless, healthy environments with our professional cleaning for homes and offices.</p>
-          <ul class="service-features">
-            <li>General & deep cleaning</li>
-            <li>Office & home cleaning</li>
-            <li>Post-construction cleaning</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Landscaping" style="cursor:pointer;">
+            <img src="./pankaj-shah-1ff_i7jO-4g-unsplash.jpg" class="card-img-top" alt="Landscaping" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-flower1"></i></span>
+                <h5 class="card-title mb-0">Landscaping</h5>
+              </div>
+              <p class="card-text">Transforming outdoor areas with creative landscaping and garden design.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- Roof and Floor Cleaning -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./new house cleaning 2.jpg" alt="Roof and Floor Cleaning">
-        <div class="service-card-body">
-          <h5 class="card-title">Roof and Floor Cleaning</h5>
-          <p>We clean and restore roofs and floors for a fresh, safe environment.</p>
-          <ul class="service-features">
-            <li>Roof cleaning & restoration</li>
-            <li>Floor scrubbing & polishing</li>
-            <li>Mold and stain removal</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
-        </div>
-      </div>
-    </div>
-    <!-- Property Renovations -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./renovations.jpeg" alt="Property Renovations">
-        <div class="service-card-body">
-          <h5 class="card-title">Property Renovations</h5>
-          <p>Revitalize your space with our comprehensive property renovation services.</p>
-          <ul class="service-features">
-            <li>Residential & commercial renovations</li>
-            <li>Eco-friendly materials</li>
-            <li>Custom designs & solutions</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
-        </div>
-      </div>
-    </div>
-    <!-- Consultancy and Assessment -->
-    <div class="col-md-4">
-      <div class="service-card h-100">
-        <img src="./kara-eads-L7EwHkq1B2s-unsplash.jpg" alt="Consultancy and Assessment">
-        <div class="service-card-body">
-          <h5 class="card-title">Consultancy and Assessment</h5>
-          <p>Get expert advice and assessments for your cleaning, fumigation, and landscaping needs.</p>
-          <ul class="service-features">
-            <li>Site assessments</li>
-            <li>Customized service plans</li>
-            <li>Ongoing support & consultation</li>
-          </ul>
-          <a href="contact.html" class="btn btn-brown mt-3">Request Service</a>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0 service-modal-trigger service-card-animate" data-service="Property Renovations" style="cursor:pointer;">
+            <img src="renovations.jpeg" class="card-img-top" alt="Property Renovations" style="height:180px;object-fit:cover;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="me-2" style="font-size:1.5rem;color:#8B5C2A;"><i class="bi bi-tools"></i></span>
+                <h5 class="card-title mb-0">Property Renovations</h5>
+              </div>
+              <p class="card-text">Comprehensive renovation services to upgrade and modernize properties.</p>
+              <a href="contact.html" class="btn btn-brown mt-3 w-100">Request Quote</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -254,7 +370,7 @@
 <!-- Optional: Testimonials Section -->
 <section class="section container text-center">
   <h2>What Our Clients Say</h2>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mb-4">
     <div class="col-md-8">
       <div class="carousel slide" id="serviceTestimonials" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -286,6 +402,13 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-auto">
+      <img src="vesko_logo.png" alt="Client Logo 1" style="height:48px;width:auto;margin:0 12px;">
+      <img src="favicon.png" alt="Client Logo 2" style="height:48px;width:auto;margin:0 12px;">
+      <!-- Add more client logos as needed -->
+    </div>
+  </div>
 </section>
 
 <!-- Call to Action -->
@@ -297,6 +420,55 @@
 
 <!-- Footer -->
 <footer class="footer">
+<!-- FAQ Section -->
+<section class="section container" style="margin-top:40px;">
+  <h2 class="text-center mb-4" style="color:#8B5C2A;">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+          What areas do you serve?
+        </button>
+      </h2>
+      <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">We serve homes, offices, and institutions throughout Uganda.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          How do I request a quote?
+        </button>
+      </h2>
+      <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Click the 'Request Quote' button on any service card or use the sticky contact button to reach our team.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          Are your cleaning products safe?
+        </button>
+      </h2>
+      <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Yes, we use eco-friendly and safe products for all our cleaning and fumigation services.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          Can I book multiple services at once?
+        </button>
+      </h2>
+      <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Absolutely! You can request a quote for multiple services and we'll tailor a package for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Sticky Contact Button -->
+<a href="contact.html" class="sticky-contact-btn">Contact Us</a>
+
   <p>&copy; <span id="year"></span> Vesko Consultants Ltd. All Rights Reserved. 
     <br>Designed by Tecnix Uganda</p>
   <div>
@@ -306,11 +478,55 @@
   </div>
   
 </footer>
+<!-- Service Modal -->
+<div class="modal fade" id="serviceDetailModal" tabindex="-1" aria-labelledby="serviceDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceDetailModalLabel">Service Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="serviceDetailModalBody">
+        <!-- Service details will be injected here -->
+      </div>
+      <div class="modal-footer">
+        <a href="contact.html" class="btn btn-brown">Request Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
+  // Animate service cards on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.service-card-animate').forEach(function(card, i) {
+      card.style.animationDelay = (i * 0.15) + 's';
+    });
+  });
   // Dynamic year insertion
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Service card modal logic
+  const serviceDetails = {
+    "House Cleaning": "Professional cleaning for homes, ensuring a spotless and healthy environment.",
+    "Sofa Cleaning": "Deep cleaning for sofas and upholstery to remove stains and allergens.",
+    "Stone Cleaning": "Restoring the beauty of stone surfaces with specialized cleaning techniques.",
+    "Roofing Tile Cleaning": "Cleaning and maintenance for roofing tiles to extend their lifespan.",
+    "Petrol Station Cleaning": "Specialized cleaning for petrol stations, ensuring safety and cleanliness.",
+    "Fumigation": "Effective pest control and fumigation services for all property types.",
+    "Paving": "High-quality paving solutions for driveways, walkways, and outdoor spaces.",
+    "Landscaping": "Transforming outdoor areas with creative landscaping and garden design.",
+    "Property Renovations": "Comprehensive renovation services to upgrade and modernize properties."
+  };
+  document.querySelectorAll('.service-modal-trigger').forEach(card => {
+    card.addEventListener('click', function() {
+      const service = this.getAttribute('data-service');
+      document.getElementById('serviceDetailModalLabel').textContent = service;
+      document.getElementById('serviceDetailModalBody').textContent = serviceDetails[service] || '';
+      const modal = new bootstrap.Modal(document.getElementById('serviceDetailModal'));
+      modal.show();
+    });
+  });
 </script>
 </body>
 </html>
-
 
