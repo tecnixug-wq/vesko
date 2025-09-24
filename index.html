@@ -10,6 +10,23 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    /* Subtle gradient background for main sections */
+    .main-bg {
+      background: linear-gradient(120deg, #f8f9fa 70%, #e9ecef 100%);
+      border-radius: 16px;
+      margin-bottom: 40px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    /* Card fade-in animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .service-card, .why-choose .card {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
         .service-card {
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
@@ -151,19 +168,30 @@
       right: 30px;
       display: none;
       z-index: 999;
-      background: #8B5C2A;
+      background: linear-gradient(135deg, #8B5C2A 60%, #e9ecef 100%);
       color: #fff;
-      border: none;
+      border: 2px solid #fff;
       border-radius: 50%;
       width: 48px;
       height: 48px;
-      font-size: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-size: 28px;
+      box-shadow: 0 4px 16px rgba(139,92,42,0.18);
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.3s, box-shadow 0.3s;
     }
     .back-to-top:hover {
-      background: #6e471f;
+      background: linear-gradient(135deg, #6e471f 60%, #f8f9fa 100%);
+      box-shadow: 0 8px 32px rgba(139,92,42,0.25);
+      color: #fff;
+    }
+    @media (max-width: 767px) {
+      .back-to-top {
+        right: 12px;
+        bottom: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
     }
     .btn {
       border-radius: 30px;
@@ -280,7 +308,7 @@
 </div>
 
 <!-- About Preview -->
-<section class="section container" id="about-preview">
+<section class="section container main-bg" id="about-preview">
   <div class="row align-items-center">
     <div class="col-md-5 text-center mb-4 mb-md-0">
       <img src="./vesko_logo.png" alt="Vesko team at work" class="img-fluid rounded shadow" style="max-height:260px;">
@@ -301,7 +329,7 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="section text-center bg-light why-choose" id="why-choose">
+<section class="section text-center bg-light why-choose main-bg" id="why-choose">
   <div class="container">
     <h2>Why Choose Us</h2>
     <div class="row mt-4 justify-content-center">
@@ -346,7 +374,7 @@
 </section>
 
 <!-- Services Cards -->
-<section class="section bg-light" id="services">
+<section class="section bg-light main-bg" id="services">
   <div class="container text-center">
     <h2>Our Services</h2>
     <div class="row mt-4">
@@ -377,8 +405,8 @@
           <img src="./petrol station.jpg" class="service-card-img" alt="Cleaning service - spotless office">
           <div class="service-card-body d-flex flex-column">
             <div>
-              <h5 class="card-title">Cleaning</h5>
-              <p class="card-text">Professional cleaning for homes and offices.</p>
+              <h5 class="card-title">Commercial Property Cleaning</h5>
+              <p class="card-text">Professional cleaning for business premises.</p>
             </div>
           </div>
         </div>
@@ -390,14 +418,14 @@
 </section>
 
 <!-- Call to Action -->
-<section class="section container text-center" id="cta">
+<section class="section container text-center main-bg" id="cta">
   <h2>Ready to Transform Your Space?</h2>
   <p>Contact us today for a free quote or to book a service. Experience the Vesko difference!</p>
   <a href="contact.html" class="btn btn-brown">Request a Quote</a>
 </section>
 
 <!-- Testimonials -->
-<section class="section container text-center" id="testimonials">
+<section class="section container text-center main-bg" id="testimonials">
   <h2>What Our Clients Say</h2>
   <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel" aria-label="Testimonials Carousel">
     <div class="carousel-inner">
@@ -434,6 +462,12 @@
 </footer>
 
 <script>
+  // Animate service and why-choose cards on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.service-card, .why-choose .card').forEach(function(card, i) {
+      card.style.animationDelay = (i * 0.15) + 's';
+    });
+  });
   // Dynamic year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -452,5 +486,4 @@
 </script>
 </body>
 </html>
-
 
